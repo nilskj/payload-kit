@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  # forms-api development database setup
+  dev-mongodb:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+      MONGO_INITDB_DATABASE: payload-kit
+    ports:
+      - 27017:27017
