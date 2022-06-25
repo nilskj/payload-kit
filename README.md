@@ -1,6 +1,7 @@
-# create-svelte
+# create-svelte with payload cms
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This example also sets up [payload cms](https://payloadcms.com/) with a locally running mongoDB, and tailwind CSS.
 
 ## Creating a project
 
