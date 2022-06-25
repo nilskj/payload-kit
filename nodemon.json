@@ -1,4 +1,4 @@
 {
-  "ext": "js",
-  "exec": "node src/server/index.js"
+	"ext": "js",
+	"exec": "node src/server/index.js"
 }
