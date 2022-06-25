@@ -17,17 +17,14 @@ docker compose up
 # Install dependencies if you haven't already
 yarn
 
-# Run both payload and sveltekit in dev in parallel
-yarn dev # run the combined payload and sveltekit node server!
+# Run both payload and sveltekit in dev in parallel, sveltekit at 3000, cms at 3001
+yarn dev
 
 # Reboot container, run build and then dev in one command
 yarn dx 
 
-# Run svelte-kit only (dev)
-yarn dev:svelte
-
-# run only Payload (stand alone mode)
-yarn payload
+# Serve a merged server handling both Payload and Svelte for prod
+yarn serve
 ```
 
 Otherwise all else as normal like a sveltekit app.
