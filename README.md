@@ -3,37 +3,21 @@
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 This example also sets up [payload cms](https://payloadcms.com/) with a locally running mongoDB, and tailwind CSS.
 
-## Creating a project
+## Running a single server with both the payload and sveltekit
 
-If you're seeing this, you've probably already done this step. Congrats!
+We can use the built output of node adapter for sveltekit.
+and inject the payload cms handler, see src/server/index.js.
 
-```bash
-# create a new project in the current directory
-npm init svelte
+Boot up a docker container with a mongodb
 
-# create a new project in my-app
-npm init svelte my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
-npm run dev
+docker compose up # Boot up a docker container with a mongodb
+yarn # Install deps
+yarn build # Build sveltekit output
+yarn cms # run the combined payload and sveltekit node server!
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+yarn dx #re-boot container, run build and start server in one command
 ```
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Otherwise all else as normal like a sveltekit app.

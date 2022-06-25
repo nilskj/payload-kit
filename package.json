@@ -11,7 +11,7 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
 		"format": "prettier --write --plugin-search-dir=. .",
-        "dx": "docker compose up -d && pnpm build && pnpm cms",
+        "dx": "docker compose up -d && yarn build && yarn cms",
 		"cms": "node src/server/index.js"
 	},
 	"devDependencies": {
