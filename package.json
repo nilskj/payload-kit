@@ -2,8 +2,13 @@
 	"name": "payload-kit",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
+		"build:payload": "payload build",
+		"build:svelte-kit": "svelte-kit build",
+		"generate:types": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload generate:types",
+		"dev:sveltekit": "svelte-kit dev",
+		"dev:payload": "nodemon",
+		"dev": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts run-p dev:* ",
+		"build": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts run-s build:*",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
 		"prepare": "svelte-kit sync",
@@ -11,8 +16,9 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
 		"format": "prettier --write --plugin-search-dir=. .",
-        "dx": "docker compose up -d && yarn build && yarn cms",
-		"cms": "node src/server/index.js"
+		"dx": "docker compose up -d && yarn build && yarn dev",
+        "serve": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts NODE_ENV=production node src/server/index.js",
+		"payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts CMS_MODE=PAYLOAD_STANDALONE node src/server/index.js"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
@@ -24,6 +30,7 @@
 		"eslint": "^8.16.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"npm-run-all": "^4.1.5",
 		"postcss": "^8.4.12",
 		"postcss-load-config": "^3.1.4",
 		"prettier": "^2.6.2",
@@ -38,7 +45,10 @@
 	"type": "module",
 	"dependencies": {
 		"@types/express": "^4.17.13",
+		"cross-env": "^7.0.3",
+		"dotenv": "^16.0.1",
 		"express": "^4.18.1",
+		"nodemon": "^2.0.18",
 		"payload": "^0.18.1",
 		"ts-node": "^10.8.1"
 	}

@@ -17,8 +17,12 @@ app.get('/healthcheck', (req, res) => {
 });
 
 // let SvelteKit handle everything else, including serving prerendered pages and static assets
-app.use(handler);
+// disable if payload needs to be run in standalone.
+if (process.env.CMS_MODE !== "PAYLOAD_STANDALONE") {
+  app.use(handler);
+}
 
 app.listen(3000, () => {
+
   console.log('listening on port 3000');
 });
