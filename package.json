@@ -17,8 +17,8 @@
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
 		"format": "prettier --write --plugin-search-dir=. .",
 		"dx": "docker compose up -d && yarn build && yarn dev",
-        "serve": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts NODE_ENV=production node src/server/index.js",
-		"payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts CMS_MODE=PAYLOAD_STANDALONE node src/server/index.js"
+		"serve": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts NODE_ENV=production node src/server/index.js",
+		"payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts NODE_ENV=production CMS_MODE=PAYLOAD_STANDALONE node src/server/index.js"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",

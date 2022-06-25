@@ -10,14 +10,24 @@ and inject the payload cms handler, see src/server/index.js.
 
 Boot up a docker container with a mongodb
 
-
 ```bash
-docker compose up # Boot up a docker container with a mongodb
-yarn # Install deps
-yarn build # Build sveltekit output
-yarn cms # run the combined payload and sveltekit node server!
+# Boot up a docker container with a mongodb
+docker compose up 
 
-yarn dx #re-boot container, run build and start server in one command
+# Install dependencies if you haven't already
+yarn
+
+# Run both payload and sveltekit in dev in parallel
+yarn dev # run the combined payload and sveltekit node server!
+
+# Reboot container, run build and then dev in one command
+yarn dx 
+
+# Run svelte-kit only (dev)
+yarn dev:svelte
+
+# run only Payload (stand alone mode)
+yarn payload
 ```
 
 Otherwise all else as normal like a sveltekit app.
