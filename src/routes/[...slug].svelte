@@ -1,5 +1,6 @@
 <script context="module">
 	import { env } from '$lib/util/env';
+	export const prerender = true;
 
 	/** @type {import('./__types/[...slug]').Load} */
 	export async function load({ fetch, params }) {
@@ -23,4 +24,6 @@
 	export let page;
 </script>
 
-{JSON.stringify(page)}
+<h2>
+	{JSON.stringify(page)}
+</h2>

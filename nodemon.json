@@ -1,4 +1,4 @@
 {
-	"ext": "js",
+	"ext": "svelte",
 	"exec": "node src/server/index.js"
 }
