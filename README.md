@@ -12,7 +12,7 @@ Boot up a docker container with a mongodb
 
 ```bash
 # Boot up a docker container with a mongodb
-docker compose up 
+docker compose up
 
 # Install dependencies if you haven't already
 yarn
@@ -21,7 +21,7 @@ yarn
 yarn dev
 
 # Reboot container, run build and then dev in one command
-yarn dx 
+yarn dx
 
 # Serve a merged server handling both Payload and Svelte for prod
 yarn serve

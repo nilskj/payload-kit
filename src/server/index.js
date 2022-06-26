@@ -19,8 +19,8 @@ app.get('/healthcheck', (req, res) => {
 
 // let SvelteKit handle everything else, including serving prerendered pages and static assets
 // disable if payload needs to be run in standalone (for develepment).
-if (process.env.NODE_ENV === "production") {
-  console.log("...merging in built Svelte handler")
+if (process.env.NODE_ENV === 'production') {
+	console.log('...merging in built Svelte handler');
 	app.use(handler);
 }
 const port = process.env.PORT || 3000;
